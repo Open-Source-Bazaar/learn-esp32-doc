@@ -33,23 +33,30 @@ int standTime=1000;
 
 // 初始化设备
 void setup() {
+  Serial.begin(115200);
   // 初始化红绿灯控制输出口
   pinMode(redlight, OUTPUT);
   pinMode(greenlight, OUTPUT);
   // 初始化控制输出口为低电平
   digitalWrite(redlight, LOW);  
   digitalWrite(greenlight, LOW);  
+  Serial.print("初始化");
 }
 
 // 执行循环任务
 void loop() {
-  // 设置通行状态和时间
-  digitalWrite(redlight, HIGH);  
-  digitalWrite(greenlight, LOW);  
-  delay(passTime);        
-  
-  // 设置等待状态和时间
-  digitalWrite(greenlight, HIGH);  
-  digitalWrite(redlight, LOW);     
-  delay(standTime);              
+//  // 设置通行状态和时间
+//  digitalWrite(redlight, HIGH);  
+//  digitalWrite(greenlight, LOW);  
+//  delay(passTime);        
+//  
+//  // 设置等待状态和时间
+//  digitalWrite(greenlight, HIGH);  
+//  digitalWrite(redlight, LOW);     
+//  delay(standTime); 
+
+    for(int i = 0; i < 100; i++){
+      Serial.println(i);
+      delay(100); 
+     }
 }
